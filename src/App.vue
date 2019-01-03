@@ -25,22 +25,13 @@
         seller: {},
         tabs: [{
           label: '商品',
-          component: Goods,
-          data: {
-            goods: this.seller
-          }
+          component: Goods
         }, {
           label: '评价',
-          component: Ratings,
-          data: {
-            ratings: this.seller
-          }
+          component: Ratings
         }, {
           label: '商家',
-          component: Seller,
-          data: {
-            seller: this.seller
-          }
+          component: Seller
         }]
       };
     },
