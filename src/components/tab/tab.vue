@@ -18,7 +18,7 @@
         @scroll="onSlideScroll"
         @change="onSlideChange">
         <cube-slide-item v-for="(tab,index) in tabs" :key="index">
-          <component ref="component" :is="tab.component"></component>
+          <component ref="component" :is="tab.component" :seller="seller"></component>
         </cube-slide-item>
       </cube-slide>
     </div>
@@ -33,6 +33,12 @@
         type: Array,
         default() {
           return [];
+        }
+      },
+      seller: {
+        type: Object,
+        default() {
+          return {};
         }
       },
       initialIndex: {
@@ -62,6 +68,7 @@
         }
       }
     },
+    // 解决首次加载组件数据问题
     mounted() {
       this.onSlideChange(this.index);
     },
